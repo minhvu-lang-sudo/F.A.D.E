@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Injection Defender",
+  "version": "0.2.0",
+  "description": "Intercept, check, and transform prompts before sending to LLM chatboxes.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": [
+        "config.js",
+        "rules.js",
+        "templates.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
